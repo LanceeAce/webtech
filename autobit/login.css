@@ -1,0 +1,165 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff4b5c, #ff5f5f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Container Styling */
+.login-container {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    position: relative;
+}
+
+.login-container::before,
+.login-container::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+    top: -50%;
+    left: -50%;
+    transform: rotate(25deg);
+    animation: shine 5s infinite;
+    z-index: -1;
+}
+
+/* Header Styling */
+.login-container h1 {
+    margin-bottom: 1.5rem;
+    color: #ff4b5c;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Input Fields Styling */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+    background: #fff;
+    border-color: #ff5f5f;
+    box-shadow: 0 0 8px rgba(255, 75, 92, 0.4);
+}
+
+/* Label Styling */
+.login-container label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* Button Styling */
+.login-container .button-container {
+    margin-top: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4b5c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 75, 92, 0.5);
+    background: #ff3333;
+}
+
+/* Font Awesome Button Styling */
+.login-container .admin-login-btn {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-container .admin-login-btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+.login-container p {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+/* Links Styling */
+.login-container p a {
+    color: #ff4b5c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.login-container p a:hover {
+    color: #ff2a2a;
+}
+
+/* Error Message Styling */
+#error-messages {
+    color: #ff4b5c;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        width: 95%;
+        padding: 2rem;
+    }
+    .login-container h1 {
+        font-size: 1.6rem;
+    }
+    .login-container button {
+        font-size: 0.9rem;
+    }
+}

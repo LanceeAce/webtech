@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ea6278, #ee2e2e);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Dynamic Moving Circles */
+        .circle {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(0, 242, 254, 0.2);
+            border-radius: 50%;
+            animation: moveCircle 2s ease-in-out infinite;
+            opacity: 2;
+        }
+
+        .circle:nth-child(1) {
+            top: -100px;
+            left: -150px;
+            animation-duration: 12s;
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(2) {
+            top: 30%;
+            right: -180px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(3) {
+            bottom: -150px;
+            left: 20%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(4) {
+            top: 50%;
+            right: -100px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(5) {
+            bottom: 20%;
+            left: 30%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+        .circle:nth-child(6) {
+            top: -100px;
+            left: -150px;
+            animation-duration: 12s;
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(7) {
+            top: 30%;
+            right: -180px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(8) {
+            bottom: -150px;
+            left: 20%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(9) {
+            top: 50%;
+            right: -100px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(10) {
+            bottom: 20%;
+            left: 50%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        @keyframes moveCircle {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(100vw, 100vh);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #admin-login-form {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .input-container input:focus {
+            border-color: #00f2fe;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.3);
+        }
+
+        .input-container i {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        button i {
+            margin-right: 8px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            #admin-login-form {
+                padding: 20px 30px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Multiple Dynamic Background Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div id="admin-login-container">
+        <h1>Admin </h1>
+        <form id="admin-login-form">
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" required placeholder="Enter your username">
+            </div>
+            
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            
+            <button type="submit">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+        </form>
+    </div>
+    
+
+    <script>
+        const handleAdminLogin = async () => {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        // Make sure the backend URL is correct
+        const response = await fetch('http://localhost:5000/admin/admin-login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+            // Save JWT token to localStorage
+            localStorage.setItem('adminToken', data.token);
+            showToast('Login successful!', 'success');
+            window.location.href = 'admin-dashboard.html';
+        } else {
+            showToast(data.message, 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showToast('Something went wrong.', 'error');
+    }
+};
+
+// Function to display toast with inline styles
+const showToast = (message, type) => {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+
+    // Inline styles for the toast message
+    toast.style.position = 'fixed';
+    toast.style.top = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.padding = '15px';
+    toast.style.borderRadius = '8px';
+    toast.style.fontSize = '1.1rem';
+    toast.style.color = 'white';
+    toast.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+    toast.style.transition = 'opacity 2s ease-in-out, top 2s ease-in-out';
+
+    // Setting background color based on success or error
+    if (type === 'success') {
+        toast.style.backgroundColor = '#4caf50';
+    } else if (type === 'error') {
+        toast.style.backgroundColor = '#f44336';
+    }
+
+    // Append toast to the body
+    document.body.appendChild(toast);
+
+    // Show the toast
+    toast.style.opacity = '1';
+    toast.style.top = '30px';
+
+    // Hide the toast after 3 seconds
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.top = '20px'; // Move it back to the top
+        setTimeout(() => {
+            document.body.removeChild(toast); // Remove from DOM after animation
+        }, 500); // Delay removal after opacity transition
+    }, 3000); // Keep the toast visible for 3 seconds
+};
+
+const form = document.getElementById('admin-login-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleAdminLogin();
+});
+
+    </script>
+</body>
+</html>

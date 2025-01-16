@@ -1,0 +1,249 @@
+/* Animation Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2em;
+    animation: slideIn 0.5s ease forwards;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header button {
+    margin-left: 10px;
+    background: linear-gradient(to right, #f98470, #f50a0a);
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+header button:hover {
+    background: linear-gradient(to right, #fe0000, #fb7070);
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.modal-content h2 {
+    color: #8d1f13;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content input,
+.modal-content button {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: block;
+    
+   
+}
+
+.modal-content button {
+    background: linear-gradient(to right, #ff7b7b, #f70c0c);
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    padding: 7px 10px; /* Smaller padding */
+    font-size: 14px;
+}
+
+.modal-content button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff0000, #ff0000);
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    margin: -10px -10px 0 0;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Product List Section */
+.product-list h2 {
+    text-align: center;
+    color: #ffcc00;
+    animation: slideIn 0.5s ease forwards;
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Card */
+.product {
+    background: rgba(50, 50, 50, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product h3 {
+    font-size: 1.8em; /* Slightly larger for visibility */
+    margin: 20px 0;
+    color: #cf3535; /* Maroon red for category titles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Buttons */
+.product button {
+    background: linear-gradient(to right, #800000, #660000); /* Maroon red gradient */
+    color: white; /* White text color for better contrast */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added box-shadow transition */
+    margin-right: 1.1rem;
+}
+
+.product button:hover {
+    background: linear-gradient(to right, #660000, #800000); /* Inverse gradient on hover */
+    transform: translateY(-3px); /* Button hover effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
+}
+/* Style adjustments for user container in modal */
+#user-container {
+    max-height: 300px; /* Limit the height of the user list */
+    overflow-y: auto;  /* Add scroll if content overflows */
+    text-align: left;
+}
+
+/* Alert Modal Container */
+.alert-modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    
+}
+
+/* Alert Modal Content */
+.alert-modal-content {
+    background-color: rgb(244, 46, 46);
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    text-align: center;
+    animation: fade-in 0.3s ease-out;
+    margin-bottom: 40rem;
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    header div {
+        margin-top: 10px;
+    }
+
+    #product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

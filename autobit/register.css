@@ -1,0 +1,211 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff4b5c, #ff5f5f);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite; /* Add animation for moving background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Register Container Styling */
+.register-container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    animation: pulse 6s infinite;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+/* Background Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1) rotate(45deg); opacity: 0.5; }
+    50% { transform: scale(1.1) rotate(45deg); opacity: 0.3; }
+    100% { transform: scale(1) rotate(45deg); opacity: 0.5; }
+}
+
+/* Header Styling */
+.register-container h1 {
+    margin-bottom: 1.5rem;
+    color: #ff4b5c;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: textGlow 1.5s ease-in-out infinite;
+}
+
+/* Glowing Text Animation */
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 10px #ff4b5c, 0 0 20px #ff5f5f; }
+    50% { text-shadow: 0 0 20px #ff4b5c, 0 0 40px #ff5f5f; }
+}
+
+/* Input Fields Styling */
+.register-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    margin-left: -1rem;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.register-container input:focus {
+    background: #fff;
+    border-color: #ff5f5f;
+    box-shadow: 0 0 8px rgba(255, 75, 92, 0.4);
+    transform: scale(1.03);
+}
+
+/* Button Styling */
+.register-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4b5c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+label{
+    color: #000000;
+}
+p{
+    color: #000000;
+}
+.register-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 75, 92, 0.5);
+    background: #ff3333;
+}
+
+/* Links Styling */
+.register-container p a {
+    color: #ff4b5c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-container p a:hover {
+    color: #ff2a2a;
+}
+
+/* Font Awesome Button Styling for Additional Options (if needed) */
+.register-container .admin-login-btn {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.register-container .admin-login-btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+
+/* Notification Styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    max-width: 90%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+/* Success Message */
+.notification.success {
+    background-color: #4caf50; /* Green */
+    border-left: 5px solid #388e3c;
+}
+
+/* Error Message */
+.notification.error {
+    background-color: #f44336; /* Red */
+    border-left: 5px solid #d32f2f;
+}
+
+/* OK Button Styling */
+.ok-button {
+    background-color: #ff9800; /* Orange */
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ok-button:hover {
+    background-color: #e65100; /* Darker orange */
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MotoParts Merchandise</title>
+    <link rel="stylesheet" href="login.css">  <!-- Make sure this path is correct -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Autobit Login Form</h1>
+        <form id="login-form" action="" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div id="error-messages"></div>
+            <div class="button-container">
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <a href="admin/admin-login.html">
+                    <button type="button" class="admin-login-btn"><i class="fas fa-user-shield"></i> Login as Admin</button>
+                </a>
+            </div>
+            
+        </form>
+        
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+
+        <!-- Container for error messages -->
+        
+    </div>
+    <script src="login.js"></script> <!-- Make sure this script is placed after the HTML elements -->
+</body>
+</html>
